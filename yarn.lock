@@ -10,6 +10,11 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
+"@dhx/trial-suite@^8.3.2":
+  version "8.3.2"
+  resolved "https://npm.dhtmlx.com/@dhx%2ftrial-suite/-/trial-suite-8.3.2.tgz#8cde366e1a55d3195b9a9946abf0d028c9ae6b09"
+  integrity sha512-T9aZLaEhrxQXmM5CaQbxkNceZzVZ/6+6AbvnjSRCJhufqo5e12UgkCJoshu2akVmljIsuxCZY/gUD3ziqxSJZg==
+
 "@esbuild/android-arm64@0.19.7":
   version "0.19.7"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm64/-/android-arm64-0.19.7.tgz#646156aea43e8e6723de6e94a4ac07c5aed41be1"
@@ -291,9 +296,6 @@ dequal@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/dequal/-/dequal-2.0.3.tgz#2644214f1997d39ed0ee0ece72335490a7ac67be"
   integrity sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==
-
-dhx-spreadsheet-package@./src/dhx:
-  version "5.0.9"
 
 esbuild@^0.19.3:
   version "0.19.7"

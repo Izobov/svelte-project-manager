@@ -1,5 +1,5 @@
 {
-  "name": "svelte-spreadsheet",
+  "name": "svelte-suite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,6 +14,6 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
-    "dhx-spreadsheet-package": "./src/dhx"
+    "@dhx/trial-suite": "^8.3.2"
   }
 }
