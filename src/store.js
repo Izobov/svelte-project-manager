@@ -1,3 +1,5 @@
+import { writable } from 'svelte/store';
+
 const sidebarData = [
   {
     id: "toggle",
@@ -122,7 +124,7 @@ const sidebarData = [
   },
 ];
 
-const topmenuData = [
+const toolbarData = [
   {
     id: "topMenuButton",
     type: "button",
@@ -878,49 +880,6 @@ const gridDataset = [
 
 gridDataset.forEach((item) => (item.totalCost = item.nights * item.price));
 
-const gridConfig = {
-  columns: [
-    {
-      gravity: 2,
-      id: "time",
-      header: [{ text: "Time", align: "center" }],
-      type: "date",
-      format: "%M %d, %H:%i",
-    },
-    { id: "nights", header: [{ text: "Nights" }] },
-    {
-      id: "price",
-      header: [{ text: "Price" }],
-      type: "number",
-      format: "# #",
-      template: (i) => `$ ${i}`,
-    },
-    { gravity: 3, id: "contactPerson", header: [{ text: "Contact Person" }] },
-    {
-      gravity: 4,
-      id: "contactEmail",
-      header: [{ text: "Contact Email" }],
-      htmlEnable: true,
-      template: (text) => {
-        return `<span class="contact_email";>${text}</span>`;
-      },
-    },
-    {
-      gravity: 2,
-      id: "totalCost",
-      header: [{ text: "Total Cost" }],
-      type: "number",
-      format: "# #",
-      template: (i) => `$${i}`,
-    },
-  ],
-  autoWidth: true,
-  css: "grid",
-  data: gridDataset,
-  multiselection: true,
-  selection: "complex",
-  editable: true,
-};
 
 // Data for chart
 const chartData = [
@@ -1037,39 +996,6 @@ const ribbonData = [
   },
 ];
 
-// Tickets Dataview template
-const templateTicketsDataview = ({
-  title,
-  text,
-  type,
-  avatar,
-  name,
-  comments,
-  time,
-}) => {
-  return `
-            <div class="dhx_dataview_template_a">
-                <div class="dhx_dataview_template_a__head">
-                    <div class="dhx_dataview_template_a__type dhx_dataview_template_a__type--${type}">${type}</div>
-                    <div class="dhx_dataview_template_a__content">
-                        <div class="dhx_dataview_template_a__title">${title}</div>
-                        <div class="dhx_dataview_template_a__comment">${text}</div>
-                    </div>
-                </div>
-                <div class="dhx_dataview_template_a__body">
-                    <div class="dhx_dataview_template_a__person">
-                        <div class="dhx_dataview_template_a__avatar" style="background-image: url(${avatar})"></div>
-                        <div class="dhx_dataview_template_a__info">
-                            <div class="dhx_dataview_template_a__time">${time}</div>
-                            <div class="dhx_dataview_template_a__name">${name}</div>
-                        </div>
-                    </div>
-                    <div class="dhx_dataview_template_a__comments">${comments}
-                    <span class="mdi mdi-comment-outline"></span></div>
-                </div>
-            </div>
-        `;
-};
 // Tickets Dataview Data
 const ticketsDataviewData = [
   {
@@ -1259,22 +1185,6 @@ const treeData = [
   },
 ];
 
-// Message Dataview template
-const messageTemplate = ({ mail, name, avatar, status, delivered }) => {
-  return `
-        <div class="dhx_dataview_template_b">
-            <div class="dhx_dataview_template_b__avatar" style="background-image: url(${avatar});">
-                <div class="dhx_dataview_template_b__status dhx_dataview_template_b__status--${status}"></div>
-            </div>
-            <div class="dhx_dataview_template_b__title">Delivered ${delivered}</div>
-            <div class="dhx_dataview_template_b__name">${name}</div>
-            <a class="dhx_dataview_template_b__message" target="_blank" href="mailto:${mail}">
-                <span class="dhx_dataview_template_b__message-icon mdi mdi-message-reply-text"></span>
-                <span class="dhx_dataview_template_b__message-label">Message</span>
-            </a>
-        </div>
-    `;
-};
 
 const messageDataviewData = [
   {
@@ -1496,47 +1406,17 @@ const country = [
   },
 ];
 
-function hexToHSLChema(HEX) {
-  let r = 0,
-    g = 0,
-    b = 0;
-  if (HEX.length == 4) {
-    r = "0x" + HEX[1] + HEX[1];
-    g = "0x" + HEX[2] + HEX[2];
-    b = "0x" + HEX[3] + HEX[3];
-  } else if (HEX.length == 7) {
-    r = "0x" + HEX[1] + HEX[2];
-    g = "0x" + HEX[3] + HEX[4];
-    b = "0x" + HEX[5] + HEX[6];
-  }
-  // Then to HSL
-  r /= 255;
-  g /= 255;
-  b /= 255;
-  let cmin = Math.min(r, g, b),
-    cmax = Math.max(r, g, b),
-    delta = cmax - cmin,
-    h = 0,
-    s = 0,
-    l = 0;
+const store = writable({
+    gridDataset,
+    chartData,
+    hotelsData,
+    ribbonData,
+    ticketsDataviewData,
+    treeData,
+    messageDataviewData,
+    country,
+    sidebarData,
+    toolbarData,
+});
 
-  if (delta == 0) h = 0;
-  else if (cmax == r) h = ((g - b) / delta) % 6;
-  else if (cmax == g) h = (b - r) / delta + 2;
-  else h = (r - g) / delta + 4;
-
-  h = Math.round(h * 60);
-
-  if (h < 0) h += 360;
-
-  l = (cmax + cmin) / 2;
-  s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
-  s = +(s * 100).toFixed(1);
-  l = +(l * 100).toFixed(1);
-
-  return {
-    h,
-    s,
-    l,
-  };
-}
+export default store;
