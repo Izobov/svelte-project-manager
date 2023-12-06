@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 
 const sidebarData = [
   {
@@ -134,6 +134,20 @@ const toolbarData = [
     size: "small",
     circle: true,
     color: "secondary",
+  },
+
+  {
+    id: "theme",
+    circle: true,
+    icon: "mdi mdi-weather-night",
+    checked: false,
+  },
+
+  {
+    id: "contrast",
+    twoState: true,
+    active: false,
+    icon: "mdi mdi-contrast-circle",
   },
 
   {
@@ -880,14 +894,37 @@ const gridDataset = [
 
 gridDataset.forEach((item) => (item.totalCost = item.nights * item.price));
 
-
 // Data for chart
 const chartData = [
-    { id: "Jan", value: 44.33, month: "Jan", color: "var(--dhx-color-primary-light-active)", opacity: 1 },
-    { id: "Feb", value: 22.12, month: "Feb", color: "var(--dhx-color-primary-active)", opacity: 0.4 },
-    { id: "Mar", value: 53.21, month: "Mar", color: "var(--dhx-color-primary-disabled)", opacity: 0.6 },
-    { id: "Apr", value: 34.25, month: "Apr", color: "var(--dhx-color-primary-light-hover)", opacity: 0.2 },
-  ];
+  {
+    id: "Jan",
+    value: 44.33,
+    month: "Jan",
+    color: "var(--dhx-color-primary-light-active)",
+    opacity: 1,
+  },
+  {
+    id: "Feb",
+    value: 22.12,
+    month: "Feb",
+    color: "var(--dhx-color-primary-active)",
+    opacity: 0.4,
+  },
+  {
+    id: "Mar",
+    value: 53.21,
+    month: "Mar",
+    color: "var(--dhx-color-primary-disabled)",
+    opacity: 0.6,
+  },
+  {
+    id: "Apr",
+    value: 34.25,
+    month: "Apr",
+    color: "var(--dhx-color-primary-light-hover)",
+    opacity: 0.2,
+  },
+];
 
 // Hotels chart data
 const hotelsData = [
@@ -1184,7 +1221,6 @@ const treeData = [
   },
 ];
 
-
 const messageDataviewData = [
   {
     mail: "pmccoy@flowers.com",
@@ -1406,16 +1442,16 @@ const country = [
 ];
 
 const store = writable({
-    gridDataset,
-    chartData,
-    hotelsData,
-    ribbonData,
-    ticketsDataviewData,
-    treeData,
-    messageDataviewData,
-    country,
-    sidebarData,
-    toolbarData,
+  gridDataset,
+  chartData,
+  hotelsData,
+  ribbonData,
+  ticketsDataviewData,
+  treeData,
+  messageDataviewData,
+  country,
+  sidebarData,
+  toolbarData,
 });
 
 export default store;
