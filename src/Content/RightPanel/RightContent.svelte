@@ -20,6 +20,7 @@ import Chart from "./Chart.svelte";
         height: 100%;
         width: fit-content; 
         gap: 12px;
+        flex: 1;
         flex-direction: column;       
     }
 </style>

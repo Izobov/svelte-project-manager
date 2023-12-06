@@ -782,9 +782,10 @@
     display: flex;
     flex-direction: column;
     border: var(--dhx-border);
+    max-width: 800px;
   }
   .grid_container {
     min-height: 848px;
-    width: 100%;
+    
   }
 </style>

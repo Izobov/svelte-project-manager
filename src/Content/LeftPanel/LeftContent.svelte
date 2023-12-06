@@ -25,6 +25,7 @@ import Grid from "./Grid.svelte";
     .wrapper {
         display: flex;
         height: 100%; 
+        max-width: 800px;
         flex-grow: 1;
         gap: 12px;
         flex-direction: column;  
