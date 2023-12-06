@@ -1,6 +1,6 @@
 <script>
   import LeftContent from "./LeftPanel/LeftContent.svelte";
-  import RightContent from "./RightContent.svelte";
+  import RightContent from "./RightPanel/RightContent.svelte";
 
 </script>
 <div class="wrapper">
