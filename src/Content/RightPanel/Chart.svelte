@@ -11,10 +11,11 @@
       series: [
         {
           value: "value",
-          monochrome: "#0288D1",
+          // monochrome: "#0288D1",
+          color: "color",
           opacity: "opacity",
           text: "month",
-          stroke: "#FFFFFF",
+          stroke: "var(--dhx-background-primary)",
           strokeWidth: 0,
         },
       ],
@@ -24,7 +25,7 @@
           text: "id",
           color: "color",
         },
-        monochrome: "#0288D1",
+        // monochrome: "#0288D1",
         align: "right",
         valign: "middle",
         width: 30,
@@ -32,11 +33,10 @@
     });
 
     chart.data.parse([
-      { id: "Jan", value: 44.33, month: "Jan", color: "#0288D1", opacity: 1 },
-      { id: "Feb", value: 22.12, month: "Feb", color: "#0288D1", opacity: 0.4 },
-      { id: "Mar", value: 53.21, month: "Mar", color: "#0288D1", opacity: 0.6 },
-      { id: "Apr", value: 34.25, month: "Apr", color: "#0288D1", opacity: 0.2 },
-      { id: "May", value: 24.65, month: "May", color: "#0288D1", opacity: 0.1 },
+      { id: "Jan", value: 44.33, month: "Jan", color: "var(--dhx-color-primary-light-active)", opacity: 1 },
+      { id: "Feb", value: 22.12, month: "Feb", color: "var(--dhx-color-primary-active)", opacity: 0.4 },
+      { id: "Mar", value: 53.21, month: "Mar", color: "var(--dhx-color-primary-disabled)", opacity: 0.6 },
+      { id: "Apr", value: 34.25, month: "Apr", color: "var(--dhx-color-primary-light-hover)", opacity: 0.2 },
     ]);
 
     return () => chart.destructor();
