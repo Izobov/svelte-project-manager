@@ -146,12 +146,11 @@
   });
 </script>
 
-<div bind:this={node}></div>
+<div bind:this={node} class="dhx_widget--border_right"></div>
 
 <style>
   div {
     width: fit-content;
     height: 100%;
-    border-right: var(--dhx-border);
   }
 </style>

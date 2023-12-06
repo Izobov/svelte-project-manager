@@ -43,4 +43,4 @@
   });
 </script>
 
-<div bind:this={node} />
+<div bind:this={node} class="container" />

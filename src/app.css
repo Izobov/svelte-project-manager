@@ -3,9 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: var(--dhx-background-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -53,7 +50,7 @@ body {
 }
 
 .dhx_dataview_template_a_box {
-  background-color: var(--dhx-background-secondary);
+  background-color: var(--dhx-background-secondary) !important;
 }
 
 .dhx_dataview_template_a_box .dhx_dataview-item__inner-html {
@@ -181,7 +178,7 @@ body {
 
 /* Message dataview styling */
 .dhx_dataview_template_b_box {
-  background-color: var(--dhx-background-secondary);
+  background-color: var(--dhx-background-secondary) !important;
 }
 .dhx_dataview_template_b_box .dhx_dataview-item {
   padding: 0;
@@ -291,6 +288,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 40px 0;
+  background-color: var(--dhx-background-primary);
 }
 
 /* Calendar/Timepicker cell styling */

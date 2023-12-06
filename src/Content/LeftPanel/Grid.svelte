@@ -772,15 +772,16 @@
   });
 </script>
 
-<div class="wrapper">
+<div class="container">
   <div bind:this={gNode} class="grid_container" />
   <div bind:this={pNode} />
 </div>
 
 <style>
-  .wrapper {
+  .container {
     display: flex;
     flex-direction: column;
+    border: var(--dhx-border);
   }
   .grid_container {
     min-height: 848px;

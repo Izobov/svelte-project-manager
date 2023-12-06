@@ -81,4 +81,4 @@
   });
 </script>
 
-<div bind:this={node}></div>
+<div bind:this={node} class="container"></div>

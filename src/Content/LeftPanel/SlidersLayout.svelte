@@ -109,10 +109,10 @@
   });
 </script>
 
-<div bind:this={node} class="wrapper"></div>
+<div bind:this={node} class="container"></div>
 
 <style>
-    .wrapper {
+    .container {
         flex-grow: 1;
     }
 </style>

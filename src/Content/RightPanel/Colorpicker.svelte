@@ -68,7 +68,7 @@
   });
 </script>
 
-<div bind:this={node} class="container" />
+<div bind:this={node} class="container dhx_layout_colorpicker_cell " />
 
 <style>
   .container {
